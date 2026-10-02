@@ -440,6 +440,16 @@ services:
       SUPABASE_DB_URL: postgresql://postgres:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
       # TODO: Allow configuring VERIFY_JWT per function.
       VERIFY_JWT: "${FUNCTIONS_VERIFY_JWT}"
+      # Secrets customizados usados pelas edge functions do LojistaCar (Evolution API, Mercado
+      # Livre, OLX) — o compose original do EasyPanel só repassa as variáveis fixas acima pro
+      # serviço functions; sem isto, qualquer function que chame essas APIs falha com
+      # "variável de ambiente não configurada". Os valores vêm da aba Ambiente do EasyPanel.
+      EVOLUTION_API_URL: ${EVOLUTION_API_URL:-}
+      EVOLUTION_API_KEY: ${EVOLUTION_API_KEY:-}
+      ML_CLIENT_ID: ${ML_CLIENT_ID:-}
+      ML_CLIENT_SECRET: ${ML_CLIENT_SECRET:-}
+      OLX_CLIENT_ID: ${OLX_CLIENT_ID:-}
+      OLX_CLIENT_SECRET: ${OLX_CLIENT_SECRET:-}
     command: [ "start", "--main-service", "/home/deno/functions/main" ]
 
   analytics:
