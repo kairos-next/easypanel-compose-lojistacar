@@ -458,6 +458,12 @@ services:
       ML_CLIENT_SECRET: ${ML_CLIENT_SECRET:-}
       OLX_CLIENT_ID: ${OLX_CLIENT_ID:-}
       OLX_CLIENT_SECRET: ${OLX_CLIENT_SECRET:-}
+      META_APP_ID: ${META_APP_ID:-}
+      META_APP_SECRET: ${META_APP_SECRET:-}
+      META_WEBHOOK_VERIFY_TOKEN: ${META_WEBHOOK_VERIFY_TOKEN:-}
+      META_EMBEDDED_CONFIG_ID: ${META_EMBEDDED_CONFIG_ID:-}
+      INSTAGRAM_APP_ID: ${INSTAGRAM_APP_ID:-}
+      INSTAGRAM_APP_SECRET: ${INSTAGRAM_APP_SECRET:-}
     command: [ "start", "--main-service", "/home/deno/functions/main" ]
 
   analytics:
