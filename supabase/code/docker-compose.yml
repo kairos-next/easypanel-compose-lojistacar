@@ -465,6 +465,16 @@ services:
       INSTAGRAM_APP_ID: ${INSTAGRAM_APP_ID:-}
       INSTAGRAM_APP_SECRET: ${INSTAGRAM_APP_SECRET:-}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      # IA (15/11/2026): OpenRouter (fornecedor padrão do _shared/llm.ts, com reserva na Anthropic) e
+      # OpenAI (Whisper, transcrição de áudio). OPENAI_API_KEY é o mesmo nome que o studio já usa.
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_API_KEY_MANAGED: ${OPENAI_API_KEY_MANAGED:-}
+      # SDR: envio real (SDR_ALLOW_LIVE_SEND=true), freio geral (SDR_DISABLED=true) e abertura
+      # automática de sessão. Vazios = SDR não envia nada.
+      SDR_ALLOW_LIVE_SEND: ${SDR_ALLOW_LIVE_SEND:-}
+      SDR_DISABLED: ${SDR_DISABLED:-}
+      SDR_AUTO_START_SESSION: ${SDR_AUTO_START_SESSION:-}
       # E-mail (Resend), armazenamento (R2), push (VAPID), Google (Agenda/Ads), Webmotors, Asaas e
       # URL pública do app — sem estas linhas o valor do Ambiente nunca chega às functions.
       RESEND_API_KEY: ${RESEND_API_KEY:-}
